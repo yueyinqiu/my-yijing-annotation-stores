@@ -1,7 +1,16 @@
-#r "nuget: YiJingFramework.Annotating, 2.1.1"
+#r "nuget: YiJingFramework.Annotating, 4.0.0"
 
 using System.Text.Json;
 using YiJingFramework.Annotating;
+
+var skipList = new List<string>() {
+    "2023-01-17-1.json"
+};
+var skipSet = new HashSet<string>(skipList);
+if(skipSet.Count != skipList.Count)
+{
+    throw new Exception("改一下跳过的做法吧，有重名文件了。");
+}
 
 void Do(DirectoryInfo i, DirectoryInfo o)
 {
@@ -9,6 +18,9 @@ void Do(DirectoryInfo i, DirectoryInfo o)
     {
         if (file.Extension.Equals(".json", StringComparison.OrdinalIgnoreCase))
         {
+            if(skipSet.Contains(file.Name))
+                continue;
+
             var outFilePath = Path.Combine(o.FullName, file.Name);
             Console.WriteLine($"Trying {file.FullName} -> {outFilePath}");
 
