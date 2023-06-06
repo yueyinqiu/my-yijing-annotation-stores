@@ -1,8 +1,8 @@
 {
   "n": "周易",
   "t": [
-    "link: https://yueyinqiu.github.io/my-yijing-annotation-stores/readable/a1a07175/2023-01-17-1.json",
     "origin: https://github.com/bollwarm/ZHOUYI.git",
+    "link: https://yueyinqiu.github.io/my-yijing-annotation-stores/a1a07175/2023-01-17-1.json",
     "note1: This store only works for legacy versions (<= v4.0.0). For newer versions, use '2023-06-06-1.json' or later."
   ],
   "gs": [
